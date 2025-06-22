@@ -1,0 +1,13 @@
+{
+    "nombre":"Maria",
+    "edad":24,
+    "estatura":1.80,
+    "ciudad":"Bogota",
+    "casada":false,
+    "hobies":["leer","correr","comer"],
+    "direcciones":{
+        "calle1":"25b sur",
+        "calle2":"Av suba"
+    },
+    "notas":null
+}

@@ -1,0 +1,9 @@
+{
+    "nombre":"John",
+    "edad":25,
+    "ciudad":"Soacha",
+    "direccion":[
+        {"calle":"125B","carrera":"58b"},
+        {"calle":"1B","carrera":"104b"}
+    ]
+}

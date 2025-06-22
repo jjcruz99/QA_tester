@@ -1,0 +1,22 @@
+{
+    "empresa":"techjson",
+    "empleados":[
+        {
+            "nombre":"juan",
+            "edad":25
+        },
+        {
+            "nombre":"juana",
+            "edad":50
+        },
+        {
+            "nombre":"valentina",
+            "edad":22
+        }
+    ],
+    "ubicacion":{
+        "calle1":258,
+        "calle2":36,
+        "calle3":12    
+    }
+}
