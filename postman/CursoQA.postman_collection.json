@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "69d10cb0-8356-4355-a5b1-64b71c4bbbc0",
+		"name": "CursoQA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42476600"
+	},
+	"item": [
+		{
+			"name": "lista de usuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"///https://reqres.in/\r",
+							"//guardar la respuesta en una variable\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"\r",
+							"//extraer el valor del campo total de la respuesta\r",
+							"let total = jsonData.total;\r",
+							"//guardar el valor en una variable de enterno\r",
+							"pm.globals.set(\"total\",total)\r",
+							"\r",
+							"console.log('Valor de total: '+ total)\r",
+							"\r",
+							"//extraer el primer usuario\r",
+							"\r",
+							"let usuario1 = jsonData.data[0];\r",
+							"console.log(usuario1)\r",
+							"pm.globals.set(\"nombre1\",usuario1.first_name)//extraer el nombre del primer usuario\r",
+							"\r",
+							"\r",
+							"//////////// Extraer todos los correos \r",
+							"let correos = jsonData.data.map(function(item){\r",
+							"    return item.email;\r",
+							"});\r",
+							"console.log('lista de correos \\n '+correos)\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tiposVariables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"///Codigo js\r",
+							"//guardar la respuesta en una variable\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"//extraer el valor del campo total\r",
+							"let total= jsonData.total;\r",
+							"console.log('Valor de total: '+ total)\r",
+							"\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{servidor}}/users?page=2",
+					"host": [
+						"{{servidor}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});"
+				]
+			}
+		}
+	]
+}

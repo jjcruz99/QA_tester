@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "d08a1f2e-e2c0-4478-abbe-2015c903b064",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42476600"
+	},
+	"item": [
+		{
+			"name": "obtenerUnUsuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/// validar el codigo de respuesta\r",
+							"pm.test(\"status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"//validar que la rspuesta sea un json\r",
+							"pm.test(\"response is json\", function(){\r",
+							"    pm.response.to.be.json;\r",
+							"})\r",
+							"\r",
+							"///validar el contenido de la respuesta \r",
+							"pm.test(\"respuesta es correcta\",function(){\r",
+							"    const jsonData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(jsonData).to.have.property('data');\r",
+							"    pm.expect(jsonData.data).to.have.property('id',2)\r",
+							"    pm.expect(jsonData.data).to.have.property(\"email\",\"janet.weaver@reqres.in\")\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerUnUsuario_IF",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if(pm.response.code === 200){\r",
+							"    console.log(\"Felicidades a obtenido un usuario id=2\");\r",
+							"}\r",
+							"else if(pm.response.code === 401){\r",
+							"    console.log(\"Error revise autorizacion\");\r",
+							"}\r",
+							"else{\r",
+							"    console.log(\"error codigo: \"+pm.response.code);\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//script debe estar en Pre-request\r",
+							"\r",
+							"//crear nombres y trabajos de la lista para crearlos atravez de variables dinamicas\r",
+							"\r",
+							"const nombres =  [\"juan\", \"ana\", \"pedro\",\"Maria\"];\r",
+							"const trabajos = [\"QA\",\"ing\",\"profesora\",\"agricultor\"]\r",
+							"\r",
+							"pm.environment.set(\"randomNombre\",nombres[Math.floor(Math.random()*nombres.length)]);\r",
+							"pm.environment.set(\"randomTrabajo\",trabajos[Math.floor(Math.random()*trabajos.length)]);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{randomNombre}}\",\r\n    \"job\": \"{{randomTrabajo}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/register",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://es.m.wikipedia.org/wiki/Hacker",
+					"protocol": "https",
+					"host": [
+						"es",
+						"m",
+						"wikipedia",
+						"org"
+					],
+					"path": [
+						"wiki",
+						"Hacker"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "name",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "job",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
