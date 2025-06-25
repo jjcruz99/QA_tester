@@ -9,6 +9,18 @@
 
 #### 2. Fundamentos de Python para pruebas de APIs✅
    - Instalación y configuración del entorno (Python, pip, virtualenv)✅
+    ejm entorno virtual:
+         * pip install virtualenv
+         * virtualenv entorno_1
+         * cd .\entorno_1\ -> ir al entorno creado
+         * ls -> para ver en que directorio estoy
+         * cd .\Scripts\
+         * ls -> para ver en que directorio estoy
+         * .\activate -> para activar el entorno
+         * cd.. -> para devolver una parcpeta he instalar los modulos sobre el entorno :(entorno_1) PS E:\Programacion\QA\APIs Python\entorno_1>
+         * (entorno_1) PS E:\Programacion\QA\APIs Python\entorno_1> pip install requests
+
+
    - Bibliotecas esenciales:✅
      - `requests`: Para realizar solicitudes HTTP✅
      - `pytest`: Framework de pruebas✅
