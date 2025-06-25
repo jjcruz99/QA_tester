@@ -1,0 +1,34 @@
+PS E:\Programacion\QA\Maven> mvn archetype:generate -DgroupId=com.miempresa -DartifactId=mi-primer-proyecto -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>tree
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>mvn validate
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>mvn compile
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>mvn test
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>mvn package
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>mvn verify
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>mvn install
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>mvn deploy
+
+E:\Programacion\QA\Maven\mi-primer-proyecto>java -cp target/mi-primer-proyecto-1.0-SNAPSHOT.jar com.miempresa.App
+
+
+https://maven.apache.org/plugins/index.html
+mvn clean = elimina el traget
+mvn dependency:tree = dependencias en forma de arbol
+mvn help:describe
+mvn archetype:generate
+mvn site = genera documentacion del proyecto
+mvn -v
+
+
+
+
+
+
