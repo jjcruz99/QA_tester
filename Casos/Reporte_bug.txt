@@ -1,0 +1,71 @@
+
+-Título del Bug: El botón 'Ingresar' en el formulario de login no responde al hacer clic.
+
+-Severidad: Alta
+
+-Prioridad: Alta (si los usuarios no pueden iniciar sesión, la aplicación es inutilizable).
+
+-Módulo: Autenticación de Usuarios
+
+-Versión del Software: v1.2.0 
+
+-Entorno de Prueba: Chrome v120.0.6099.129, Sistema Operativo: Windows 11
+
+-Pasos para Replicarlo:
+
+                       Navegar a la URL de la página de inicio de sesión: https://mi-app.com/login.
+		       Ingresar usuario_valido en el campo "Nombre de Usuario".
+ 		       Ingresar contraseña_valida en el campo "Contraseña".
+                       Hacer clic en el botón "Ingresar".
+
+-Resultado Esperado: El usuario es autenticado y redirigido a la página de inicio.
+
+-Resultado Actual: El botón no responde al clic. La página no se actualiza y no hay ninguna respuesta visual o 
+                  mensaje de error.
+
+-Evidencia: Adjunto video-login-bug.mp4 y captura_login.png.
+
+--------------------------------------------------------------------------------------------
+
+-ID: RB_001
+
+-Titulo del bug:  "Error: Redirección incorrecta después de intentar login con campos vacíos.
+
+-Modulo: Autenticación de usuario.
+
+-Descripcion: Cuando se intenta realizar la autenticacion con los campos vacios en "Nombre usuario"
+	      y "Contraseña" muestra el mensaje de error correctamente pero redirecciona a la pagina
+	      de inicio en lugar de dirigir nuevamente a la pagina de inicio.
+
+-Severidad: Alta
+
+-Prioridad: Alta
+
+-Version del software: V1.9.9
+
+-Entorno de prueba: Google chrome V15.x.x o mozilla firefox V10.x.x
+
+-Pasos de reproduccion: 1)Abrir el navegador Google Chrome 
+		        2)Navegar a la url de la pagina de inicio de sesion.
+		        3)No ingresar datos en el campo "Nombre usuario".
+		        4)No ingresar contraseña en el campo "Contraseña".
+		        5)Hacer clic en el boton ingresar.
+
+-Resultado esperado: Muestra mensaje "Por favor diligenciar todos los campos he intentelo de nuevo".
+		     Muestra la ventana de login para diligenciar los campos nuevamente.
+
+-Resultado actual: Muestra mensaje "Por favor diligenciar todos los campos he intentelo de nuevo".
+		   No muestra la pagina de login y redirecciona a la pagina de inicio.
+
+-Evidencia: bug_redireccion_incorrecta.mp4
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+https://www.guru99.com/test-case.html
+
+Requisito Base: "El sistema debe permitir a los usuarios iniciar sesión con su nombre de usuario 
+		 y contraseña para acceder a su cuenta personal."
+
+
+1)Login Exitoso:
+
+-ID: TC_LOG_001
+
+-Modulo: Autenticación de usuario.
+
+-Título: Verificacion de login con datos validos
+
+-Prioridad: Alta
+
+-Precondiciones:El usuario 'root' con contraseña 'admin' debe estar registrado y activo en el sistema.
+		Acceso a internet, 
+		Url del sitio
+		Chrome funcional.
+		
+
+-Pasos de Ejecución: 1)Abrir el navegador Google Chrome 
+		     2)Navegar a la url de la pagina de inicio de secion.
+		     3)Ingresar 'root' en el campo "Nombre usuario".
+		     4)Ingresar 'admin' en el campo "Contraseña".
+		     5)Hacer clic en el boton ingresar.
+
+-Datos de Entrada: Datos usuario= root
+		   Contraseña = admin
+
+-Resultado Esperado: Mensaje de bienvenida 
+		     Muestra la pagina de control
+
+-Resultado actual:  Mensaje de bienvenida 
+		    Muestra la pagina de control
+
+-Estado : Pasa
+
+-Comentarios : El tamaño de la letra es un poco pequeño.
+
+-----------------------------------------------------------------
+
+2)Login con contraseña incorrecta:
+
+-ID: TC_LOG_002
+
+-Modulo: Autenticación de usuario.
+
+-Título: Verificacion de login con contraseña incorrecta
+
+-Prioridad: Alta
+
+-Precondiciones: El usuario :'root' con contraseña 'admin' debe estar registrado y activo en el sistema.
+		 Url del login de la plataforma.
+
+-Condiciones del sistema: Acceso a internet.
+ 			  Explorador(Google chrome V15.x.x o mozilla firefox V10.x.x).
+		
+
+-Pasos de Ejecución: 1)Abrir el navegador Google Chrome 
+		     2)Navegar a la url de la pagina de inicio de secion.
+		     3)Ingresar 'root' en el campo "Nombre usuario".
+		     4)Ingresar contrseña incorrecta 'error125' en el campo "Contraseña".
+		     5)Hacer clic en el boton ingresar.
+
+-Datos de Entrada: Datos usuario= root
+		   Contraseña = 'error125'
+
+-Resultado Esperado: Mensaje de contraseña invalida. 
+		     Se limpian los campos.
+		     Muestra un mensaje en color rojo debajo del login "Intentos restantes 2."
+
+-Resultado actual:  Mensaje de contraseña invalida. 
+		    Se limpian los campos.
+		    Muestra un mensaje en color rojo debajo del login "Intentos restantes 2."
+
+-Estado : Pasa
+
+-Comentarios : Ninguno.
+
+-----------------------------------------------------------------
+
+3)Login con campos vacios:
+
+-ID: TC_LOG_003
+
+-Modulo: Autenticación de usuario.
+
+-Título: Verificacion de login con campos vacios.
+
+-Prioridad: Alta
+
+-Precondiciones: 
+		 Url del login de la plataforma.
+		 Acceso a internet.
+ 	         Explorador(Google chrome V15.x.x o mozilla firefox V10.x.x).
+		
+
+-Pasos de Ejecución: 1)Abrir el navegador Google Chrome 
+		     2)Navegar a la url de la pagina de inicio de secion.
+		     3)No ingresar datos en el campo "Nombre usuario".
+		     4)No ingresar contraseña en el campo "Contraseña".
+		     5)Hacer clic en el boton ingresar.
+
+-Datos de Entrada: Datos vacios para este caso.
+
+-Resultado Esperado:Muestra mensaje "Por favor diligenciar todos los campos he intentelo de nuevo".
+		    Muestra la ventana de login para diligenciar los campos nuevamente.
+
+-Resultado actual: Muestra mensaje "Por favor diligenciar todos los campos he intentelo de nuevo".
+		   No muestra la pagina de login y redirecciona a la pagina de inicio.
+
+-Estado : Falla
+
+-Comentarios : Despues del mensaje de error al intentar realizar el login con campos vacios
+	       redireciona a la pagina incorrecta "Pagina de inicio".
+
+
