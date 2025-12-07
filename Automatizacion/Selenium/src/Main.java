@@ -15,6 +15,7 @@ import static java.lang.System.*;
 public class Main {
     public static void main(String[] args) {
 
+        //CONCEPTOS
         //Localizadores:
         //xpath
         //driver.findElement(By.xpath("//*[@id=\"APjFqb\"]"));
@@ -60,13 +61,13 @@ public class Main {
         driver.findElement(By.xpath("//*[@id=\"cnt\"]/div[4]/div/div[1]/div/div/div[1]/div[2]/a/div/span")).click();
     }
     catch (NoSuchElementException e){
-        out.println("El elemento no es encontrado : "+e.getMessage());
+        out.println("El elemento no es encontrado, Detalles del Error: "+e.getMessage());
     }
     catch (TimeoutException e){
-        System.out.println("Tiempo de espera agotado : "+e.getMessage());
+        System.out.println("Tiempo de espera agotado, Detalles del Error: "+e.getMessage());
     }
     catch (Exception e){
-        out.println("Error : "+e.getMessage());
+        out.println("Error genral : "+e.getMessage());
     }
     finally {
         //cerrar el navegador
